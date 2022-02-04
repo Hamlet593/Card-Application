@@ -1,0 +1,7 @@
+.container {
+    width: 70%;
+    height: 600px;
+    display: flex;
+    border: 1px solid rgb(68, 68, 67);
+    border-radius: 5px;
+}

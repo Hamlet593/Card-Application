@@ -1,9 +1,13 @@
+import React from 'react';
 import './App.css';
+import './components/css/container.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-       Starting
+    <div className='App'>
+      <div className='container'>
+        6
+      </div>
     </div>
   );
 }
