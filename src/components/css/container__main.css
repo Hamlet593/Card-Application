@@ -1,0 +1,7 @@
+.container__main {
+    width: 75%;
+    height: 100%;
+    border: 1px solid sandybrown;
+    display: flex;
+    flex-direction: column;
+}
