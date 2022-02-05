@@ -16,9 +16,16 @@ const App = () => {
     <div className='App'>
       <div className='container'>
         <div className='container__main'>
-          <ContainerHeader />
+          <ContainerHeader onAdd={() => {
+            setcards([
+              ...cards,
+              {
+                id: Math.random(),
+              }
+            ])
+          }}/>
           <div className='container__center'>
-            <CardsList />
+            <CardsList cards={cards}/>
           </div>
           <Containerfooter />
         </div>
