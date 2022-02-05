@@ -1,0 +1,9 @@
+.cards__list {
+    width: 100%;
+    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    overflow-y: auto;
+}
