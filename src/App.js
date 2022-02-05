@@ -3,7 +3,7 @@ import ContainerHeader from './components/jsx/ContainerHeader';
 import Containerfooter from './components/jsx/ContainerFooter';
 import ContainerInstructions from './components/jsx/ContainerInstructions';
 import CardsList from './components/jsx/CardsList';
-import RandomId from './helpers/GenerateID';
+import GenerateCardNumber from './helpers/GenerateCardNumber';
 import './App.css';
 import './components/css/container.css'
 import './components/css/container__main.css'
@@ -22,15 +22,20 @@ const App = () => {
               setcards([
                 ...cards,
                 {
-                  id: RandomId(1, 100)
+                  number: GenerateCardNumber(1, 100)
                 }
               ])
             }}
             sortCards={() => {
-              setcards([...cards].sort((a, b) => a.id - b.id))
+              setcards([...cards].sort((a, b) => a.number - b.number))
             }}/>
           <div className='container__center'>
-            <CardsList cards={cards}/>
+            <CardsList
+              cards={cards}
+              onDelete={number => {
+                setcards(cards.filter(item => item.number !== number))
+              }}
+            />
           </div>
           <Containerfooter />
         </div>
