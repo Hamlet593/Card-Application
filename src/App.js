@@ -3,6 +3,7 @@ import ContainerHeader from './components/jsx/ContainerHeader';
 import Containerfooter from './components/jsx/ContainerFooter';
 import ContainerInstructions from './components/jsx/ContainerInstructions';
 import CardsList from './components/jsx/CardsList';
+import RandomId from './helpers/GenerateID';
 import './App.css';
 import './components/css/container.css'
 import './components/css/container__main.css'
@@ -16,14 +17,18 @@ const App = () => {
     <div className='App'>
       <div className='container'>
         <div className='container__main'>
-          <ContainerHeader onAdd={() => {
-            setcards([
-              ...cards,
-              {
-                id: Math.random(),
-              }
-            ])
-          }}/>
+          <ContainerHeader
+            onAdd={() => {
+              setcards([
+                ...cards,
+                {
+                  id: RandomId(1, 100)
+                }
+              ])
+            }}
+            sortCards={() => {
+              setcards([...cards].sort((a, b) => a.id - b.id))
+            }}/>
           <div className='container__center'>
             <CardsList cards={cards}/>
           </div>
